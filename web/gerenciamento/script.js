@@ -24,20 +24,19 @@ function renderCard(tarefa) {
             <input value="${tarefa.usuario}" placeholder="Usuário">
             <button onclick="salvarEdicao(${tarefa.id})">Salvar</button>
         </div>
-
-        <div class="form-mover" style="display:none;">
+        <div class="actions">
+            <button onclick="mostrar(${tarefa.id}, '.form-editar')">Editar</button>
+            <button onclick="excluir(${tarefa.id})">Excluir</button>
+            <button onclick="mostrar(${tarefa.id}, '.form-alterar')">Alterar Status</button> 
+        </div>
+        <div class="form-alterar" style="display:none;">
+        <br>
             <select>
                 <option value="fazer" ${tarefa.status === 'fazer' ? 'selected' : ''}>Fazer</option>
                 <option value="fazendo" ${tarefa.status === 'fazendo' ? 'selected' : ''}>Fazendo</option>
                 <option value="pronto" ${tarefa.status === 'pronto' ? 'selected' : ''}>Pronto</option>
             </select>
-            <button onclick="salvarMovimento(${tarefa.id})">Mover</button>
-        </div>
-
-        <div class="actions">
-            <button onclick="mostrar(${tarefa.id}, '.form-editar')">Editar</button>
-            <button onclick="mostrar(${tarefa.id}, '.form-mover')">Mover</button>
-            <button onclick="excluir(${tarefa.id})">Excluir</button>
+             <button onclick="salvarAlteracao(${tarefa.id})">Alterar</button>
         </div>
     `;
 
@@ -64,7 +63,7 @@ function salvarEdicao(id) {
     }).then(() => location.reload());
 }
 
-function salvarMovimento(id) {
+function salvarAlteracao(id) {
     const status = document.querySelector(`#tarefa-${id} select`).value;
 
     fetch(`${URL}/${id}`, {
