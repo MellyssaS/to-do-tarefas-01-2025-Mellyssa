@@ -1,0 +1,138 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #0056b3;
+    --text-color: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+header {
+    background: linear-gradient(350deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color)
+}
+
+main.board {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.column {
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 15px;
+    width: 30%;
+    min-width: 280px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.column h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.card {
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.actions button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.actions button:hover {
+    background-color: #4e76a1;
+}
+
+.form-editar input,
+.form-mover select {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 5px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+}
+
+.form-editar button,
+.form-mover button {
+    background-color: #28a745;
+    color: var(--primary-color);
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-editar button:hover,
+.form-mover button:hover {
+    background-color: #1e7e34;
+}
+
+@media (max-width: 900px) {
+    main.board {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 90%;
+    }
+}

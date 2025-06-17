@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerenciamento de Tarefas</title>
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Tarefas</h1>
+        <nav>
+            <ul>
+                <li><a href="../tarefas/index.html">Cadastro de Tarefas</a></li>
+                <li><a href="../gerenciamento/index.html">Gerenciar Tarefas</a></li>
+            </ul>
+    </header>
+    <center><h2>Cadastro de Usuário</h2></center>
+    <section id="cadastro">
+        <main>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome:" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email:" required>
+                <br>
+                <button onclick="cadastrar()" type="submit">Cadastrar</button>
+            </form> 
+        </main>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
