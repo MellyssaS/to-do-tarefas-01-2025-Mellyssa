@@ -7,17 +7,16 @@ Sistema simples de gerenciamento de tarefas e status com as funcionalidades CRUD
 Uma indústria, do ramo alimentício, gerencia tarefas de seus setores utilizando o kanban. Não foi realizado um mapeamento do fluxo de cada setor, apenas é feito o controle das tarefas em modelo simplificado como o to do list, onde as etapas são divididas em: a fazer, fazendo e pronto.<br>O kanban foi utilizado por compartilhar as informações de forma visual, aumentando a transparência e permitindo que toda equipe do setor fique ciente das tarefas. Porém, a necessidade da empresa é aumentar a visibilidade das tarefas e integrar as informações entre todos os setores.
 
 ## Desafio
-Fazendo o uso dos seus conhecimentos, utilize as linguagens que aprendeu durante o curso para criar uma aplicação que faça o gerenciamento de tarefas no formato to do list. Os dados do usuário que a empresa deseja armazenar são: id, nome, e-mail. Em relação às tarefas a empresa deseja que sejam armazenados os seguintes dados: id da tarefa, id do usuário, descrição da tarefa, nome do setor, prioridade (baixa, média e alta), data de cadastro e status (a fazer, fazendo e pronto) que por padrão será
-inserido como a fazer.<br>
-Um usuário pode cadastrar uma ou mais tarefas, porém uma tarefa é cadastrada por somente um usuário. O gerenciamento da tarefa deve funcionar da seguinte forma: após o usuário cadastrar a tarefa, ele poderá gerenciar a mesma, selecionando-a e alterando seu status, prioridade, ou os dois, atualizando a tarefa.<br>
-A apresentação das tarefas será feita em uma tabela com três colunas representando cada status. Para garantir a integridade das informações todos os campos de cadastro deverão ser de inserção obrigatória. Não é necessário a implementação do controle de acesso do usuário (login, sessão, níveis). Abaixo você verá detalhadamente as entregas que deverão ser efetuadas e quais requisitos elas deverão cumprir.
+Fazendo o uso de seus conhecimentos, utilize as linguagens que aprendeu durante o curso para criar uma aplicação que faça o gerenciamento de tarefas no formato to do list. Os dados do usuário que a empresa deseja armazenar são: id, nome, e-mail. Em relação às tarefas a empresa deseja que sejam armazenados os seguintes dados: id da tarefa, id do usuário, descrição da tarefa, nome do setor, prioridade (baixa, média e alta), dados de cadastro e status (a fazer, fazendo e pronto) que por padrão serão inseridos como a fazer.
+Um usuário pode cadastrar uma ou mais tarefas, porém uma tarefa é cadastrada somente por um usuário. O gerenciamento da tarefa deve funcionar da seguinte forma: após o usuário cadastrar uma tarefa, ele poderá gerenciar a mesma, selecionando e alterando seu status, prioridade, ou os dois, atualizando a tarefa.
+A apresentação das tarefas será feita em uma tabela com três colunas representando cada status. Para garantir a integridade das informações, todos os campos de cadastro deverão ser de inserção obrigatória. Não é necessária a implementação do controle de acesso do usuário (login, sessão, níveis). Abaixo você verá detalhadamente quais entregas devem ser realizadas e quais requisitos elas devem cumprir.
 
 ## Entrefas
 |N°|Nome da entrega|Descrição da entrega|
 |-|-|-|
-|1|Diagrama entidade relacionamento.<br>(Tempo estimado: 10 minutos)|Criação de um diagrama entidade-relacionamento modelo lógico do banco de dados que represente o cenário proposto acima com base na regra de negócio e o diagrama conceito elaborado previamente.|
-|2|Criação do banco de dados.<br>(Tempo estimado: 20 minutos)|Criação do banco com base no diagrama conceito e regra de negócio apresentada no desafio e exportação do script de criação ou backup da base de dados.|
-|3|Caso de uso do cenário de gerenciamento de tarefas.<br>(Tempo estimado: 20 minutos)|Criação de um diagrama de caso de uso que ilustre o cenário do sistema de gerenciamento de tarefas.|
+|1|Diagrama entidade relacionamento.<br>(Tempo estimado: 10 minutos)|Criação de um diagrama de entidade-relacionamento modelo lógico do banco de dados que representa o cenário proposto acima com base na regra de negócio e o diagrama conceito elaborado anteriormente.|
+|2|Criação do banco de dados.<br>(Tempo estimado: 20 minutos)|Criação do banco com base no diagrama conceito e regra de negócio apresentando no desafio e exportação do script de criação ou backup da base de dados.|
+|3|Caso de uso do cenário de gerenciamento de tarefas.<br>(Tempo estimado: 20 minutos)|Criação de um diagrama de caso de uso que ilustra o cenário do sistema de gerenciamento de tarefas.|
 |4|Tela de cadastro de usuários.<br>(Tempo estimado: 30 minutos)|Criação de uma tela para cadastro de novos usuários no sistema, onde a mesma realize a persistência dos dados na base de dados.|
 |5|Tela de cadastro de tarefas.<br>(Tempo estimado: 40 minutos)|Criação de uma tela para cadastrar novas  tarefas, associando-as a um usuário, onde a mesma realize a persistência dos dados na base de dados.|
 |6|Tela de gerenciamento de tarefas.<br>(Tempo estimado: 60 minutos)|Criação de uma tela de gerenciamento de  tarefas com funcionalidades para visualizar, editar, excluir e atualizar registros do banco de dados.|
@@ -45,7 +44,7 @@ Nesse tópico você deve criar uma interface (tela) de gerenciamento de tarefas.
 - 2.3. A prioridade da tarefa (baixa, média, alta) conforme inserida no cadastro da mesma.
 - 2.4. O usuário que foi vinculado na tarefa no momento do cadastro.
 - 2.5. Botões de editar ou excluir a tarefa, onde o botão de editar redireciona para a página de cadastro de tarefa com os campos preenchidos previamente, assim passível de edição. O botão excluir deverá apagar da base de dados a tarefa excluída, e a mesma não deverá mais aparecer na tela de gerenciamento de tarefas.
-- 2.6. Opção de selecionar o status da tarefa a partir do campo select (combo box) e permitir a alteração do status ao clicar no botão alterar status. Após a alteração do status, a tarefa deverá ser exibida na coluna correspondente.
+- 2.6. Opção de selecionar o status da tarefa a partir dos botões que contenham o nome do respectivo status e ao clicar sobre alterar status. Após a alteração do status, a tarefa deverá ser exibida na coluna correspondente e a alteração deve persistir no banco de dados.
 
 ### Resumo das entregas
 Ao final da sua prova você deve fazer o **commit** comunicar o professor.
@@ -57,10 +56,88 @@ Ao final da sua prova você deve fazer o **commit** comunicar o professor.
 - Acrescente neste README as tecnologias utilizadas e um passo a passo para testar o App.
 - Atenção: Mesmo que as telas e popups / modais acima apresentem um fluxo de exibição, caso você não tenha conseguido desenvolver algum deles, procure colocar um recurso (botão, link etc.) que permita acessar as outras telas / modais / popups que você criou.
 
+### Tecnologias Utilizadas
+
+## Tecnologias Utilizadas para o Desenvolvimento
+
+| Linguagens e Ferramentas  | Funcionalidade |
+| ------------- |:-------------:|
+| [HTML](https://html.spec.whatwg.org/multipage/) | Modelo     |
+| [CSS](https://www.w3.org/Style/CSS/Overview.en.html)    | Visão |
+| [JavaScript (Vanilla)](https://262.ecma-international.org/)  | Controle |
+| [ORM Prisma](https://262.ecma-international.org/)  | Ferramenta de source que auxilia banco de dados |
+| [Vscode](https://code.visualstudio.com/)    | IDE (Ambiente integrado de desenvolvimento) |
+| [Insomnia](https://insomnia.rest/download)   | Testar, criar e simular APIs |
+| [NodeJS](https://nodejs.org/pt)    | Interpretar codigos em JavaScript (Vanilla) |
+| [XAMPP](https://www.apachefriends.org/pt_br/index.html)    | Software que gera um servidor web local (Banco de Dados) |
+| [Git](https://git-scm.com/downloads)    | Ferramenta colaborativa de versionamento |
+
+## Como testar 
+
+1. Configure o ambiente de desenvolvimento com as seguintes ferramentas.
+
+- [VsCode](https://code.visualstudio.com/)
+- [XAMPP](https://www.apachefriends.org/pt_br/index.html)
+- [Git](https://git-scm.com/downloads)
+- [NodeJS](https://nodejs.org/pt)
+
+2. Após a instalação das ferramentas siga esse passo para clonar o repositorio e testa-ló.
+
+- Copie o codigo HTTP no GitHub do repositorio que queira testar, abra o Git Bash em sua area de trabalho e coloque o seguinte codígo
+
+```bash
+git clone <https://url>
+```
+
+- Agora com o repositorio clonado, entre nela com o seguinte comando
+
+```bash
+cd <nomedoarquivo>
+```
+
+- Agora dentro do arquivo clonado pelo Git Bash, digite esse comando para abri-lo no VsCode
+
+```bash
+code .
+```
+
+- Com o arquivo aberto no VsCode, abra o CMD (CRTL+"), e coloque os seguinte comandos na ordem que aparecem logo abaixo
+
+```bash
+cd api
+npm i prisma -g
+npm init -y
+npm i express cors dotenv
+npx prisma init --datasource-provider mysql
+```
+
+- Apos colocar os comandos em ordem no CMD crie um pasta chamada .env (caso os comandos dados ja tenham criado não será necessario)
+
+```bash
+DATABASE_URL="mysql://root@localhost:3306/todolist?schema=public&timezone=UTC"
+```
+
+- Faremos a migração do banco de dados para o MySQL através do comando a seguir no terminal
+
+```bash
+npx prisma migrate dev --name init
+```
+
+- Caso seja de interesse, coloque seu email para conectar o Git ao GitHub
+
+```bash
+git config --global user.email "seu-email@exemplo.com"
+```
+
 ### Complementos e anexos
 No desenvolvimento dessa prova você deverá considerar os seguintes padrões:
 - Para todos os textos a fonte que você deverá utilizar é **Segoe UI**.
 - As cores para utilização no desenvolvimento das suas telas são:
+
+### DER & DCU
+
+![DER](./docs/DER.jpg)
+![DCU](./docs/DCU.jpg)
 
 |RGB|HEXADECIMAL|
 |-|-|
